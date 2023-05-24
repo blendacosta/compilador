@@ -1,0 +1,11 @@
+program teste;
+
+begin
+  leia(i);
+  leia(j);
+  if (i > 10) then
+    i = i ++ j;
+  /: else
+    i = i * j :/
+    i=5-(-2,6f)
+end
