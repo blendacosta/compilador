@@ -36,6 +36,7 @@ def lexico(arquivo):
     if c < len(arquivo) and nova_linha(arquivo[c]):
       linha_atual += 1
       c += 1
+      continue
     
     # identificador
     elif letra(arquivo[c]): # 0 >> 1
