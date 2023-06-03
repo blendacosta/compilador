@@ -1,5 +1,5 @@
 
-programifthenelsewhiledountilrepeatintdoublechar caseswitchendprocedurefunctionforbegin
+program if then else while do until repeat int double char case switch end procedure function for begin
 
 i  jx  z_teste  k12aa3 u_teste123  u_12tes3
 v!1
