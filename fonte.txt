@@ -1,21 +1,51 @@
 
+@@ teste palavras palavras reservadas
 program if then else while do until repeat int double char case switch end procedure function for begin
 
+@@ teste identificadores válidos
 i  jx  z_teste  k12aa3 u_teste123  u_12tes3
 v!1
 
+@@ teste de símbolos
 ;  . + - *
 ( ) < > : =
 { } := <> <= >=
 / @ 
 
-@@ ! teste de comentario e simbolo nao especificado
+
 /:
-  teste de comentario e ids invalidos
-  !3
-  v!
+  teste 
+  de 
+  comentário 
+  de 
+  várias 
+  linhas
 :/
 
+@@ teste de dígitos
 2 345 23,5 5,55 -4,5
 
-/::
+@@ teste com uma estrutura passada em aula
+
+program teste;
+
+begin
+  leia(i);
+  leia(j);
+  if (i > 10) then
+    i = i ++ j;
+  /: else
+    i = i ** j :/
+    i=5-(-2,6f)
+end
+
+@@ teste dos erros
+  /: teste de comentario invalido - apague a barra final ou dois pontos. :/
+
+  v_0 @@ apague o 0 para teste de um identificador inválido
+
+  3,0 @@ apague o 0 para teste de um dígito inválido
+
+  !  @@ teste de caractere inválido
+
+  paraantesdelerisso
