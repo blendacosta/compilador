@@ -24,13 +24,22 @@ class Lexico:
   
   def ignorar_em_branco(self):
     """
-    Ignora caracteres em branco no arquivo de código fonte.
+    Ignora caracteres em branco e novas linha no arquivo de código fonte. Adicionalmente verifica se o fim do arquivo foi atingido.
     
-    Esta função avança a posição atual no arquivo até encontrar um caractere que não seja considerado em branco pela função `em_branco`.
+    Esta função avança a posição atual no arquivo até encontrar um caractere que não seja considerado em branco pela função `em_branco`. Ou nova linha.
     """
-    while self.posicao_atual < self.tamanho_arquivo and self.em_branco(self.caractere_atual):
-      self.posicao_atual += 1
-      self.caractere_atual = self.arquivo[self.posicao_atual]
+    while self.posicao_atual < self.tamanho_arquivo:
+      if self.em_branco(self.caractere_atual):
+        if self.posicao_atual+1 < len(self.arquivo):
+          self.posicao_atual += 1
+          self.caractere_atual = self.arquivo[self.posicao_atual]
+        else:
+          self.fim_arquivo = True
+          break
+      elif self.nova_linha(self.caractere_atual):
+        self.verifica_nova_linha()
+      else:
+        break
       
   def verifica_nova_linha(self):
     """
@@ -39,14 +48,13 @@ class Lexico:
     Esta função avança a posição atual no arquivo até encontrar um caractere que não seja uma nova linha. A cada nova linha encontrada, a linha atual é incrementada. Se o fim do arquivo for atingido, o atributo `fim_arquivo` é definido como `True`.
     """
     while self.nova_linha(self.caractere_atual):
-        self.linha_atual += 1
-        if self.posicao_atual+1 < len(self.arquivo):
-            self.posicao_atual += 1
-            self.caractere_atual = self.arquivo[self.posicao_atual]
-        else:
-            self.fim_arquivo = True
-            break
-    self.ignorar_em_branco()
+      self.linha_atual += 1
+      if self.posicao_atual+1 < len(self.arquivo):
+          self.posicao_atual += 1
+          self.caractere_atual = self.arquivo[self.posicao_atual]
+      else:
+          self.fim_arquivo = True
+          break
   
   def proximo_caractere(self):
     """
@@ -283,7 +291,6 @@ class Lexico:
     :return: Um dicionário contendo o tipo e o valor do token gerado.
     """
     self.ignorar_em_branco() # ignora os espaços em branco até achar um caracter
-    self.verifica_nova_linha() # verifica se é nova linha e passa para o próximo atualizando a contagem de linhas
     
     if self.fim_arquivo:
       exit()
