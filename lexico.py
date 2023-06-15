@@ -24,9 +24,9 @@ class Lexico:
   
   def ignorar_em_branco(self):
     """
-    Ignora caracteres em branco e novas linha no arquivo de código fonte. Adicionalmente verifica se o fim do arquivo foi atingido.
-    
-    Esta função avança a posição atual no arquivo até encontrar um caractere que não seja considerado em branco pela função `em_branco`. Ou nova linha.
+    Ignora caracteres em branco e novas linhas no arquivo de código fonte.
+        
+    Avança a posição atual no arquivo até encontrar um caractere que não seja em branco ou nova linha.
     """
     while self.posicao_atual < self.tamanho_arquivo:
       if self.em_branco(self.caractere_atual):
