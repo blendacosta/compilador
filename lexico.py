@@ -162,6 +162,7 @@ class Lexico:
           self.lexema += self.caractere_atual
           token = {'tipo': 'comentario', 'valor': self.lexema}
           self.lexema = ''
+          self.proximo_caractere()
           return token  
         else:
           self.erro_comentario_invalido()
@@ -319,6 +320,7 @@ class Lexico:
       if self.proximo_caractere():
         if self.caractere_atual in ('=', '>'): # 4 >> 6
           self.lexema += self.caractere_atual
+          self.proximo_caractere()
         token = {'tipo': 'simbolo_especial', 'valor': self.lexema}
         self.lexema = ''
         return token
@@ -331,6 +333,7 @@ class Lexico:
       if self.proximo_caractere():
         if self.caractere_atual == '=': # 5 >> 6
           self.lexema += self.caractere_atual
+          self.proximo_caractere()
         token = {'tipo': 'simbolo_especial', 'valor': self.lexema}
         self.lexema = ''
         return token
@@ -343,6 +346,7 @@ class Lexico:
       if self.proximo_caractere():
         if self.caractere_atual == '*': # 7 >> 6
           self.lexema += self.caractere_atual
+          self.proximo_caractere()
         token = {'tipo': 'simbolo_especial', 'valor': self.lexema}
         self.lexema = ''
         return token
@@ -355,6 +359,7 @@ class Lexico:
       if self.proximo_caractere():
         if self.caractere_atual == '+': # 8 >> 6
           self.lexema += self.caractere_atual
+          self.proximo_caractere()
         token = {'tipo': 'simbolo_especial', 'valor': self.lexema}
         self.lexema = ''
         return token
@@ -367,6 +372,7 @@ class Lexico:
       if self.proximo_caractere():
         if self.caractere_atual == '=': # 9 >> 6
           self.lexema += self.caractere_atual
+          self.proximo_caractere()
         token = {'tipo': 'simbolo_especial', 'valor': self.lexema}
         self.lexema = ''
         return token
