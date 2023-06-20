@@ -2,7 +2,7 @@ class Lexico:
   """
     Classe responsável por realizar a análise léxica de um arquivo de código fonte.
   """
-   # Lista de palavras reservadas
+  # Lista de palavras reservadas
   palavras_reservadas = ['program', 'if', 'then', 'else', 'while', 'do', 'until', 'repeat', 'int', 'double', 'char', 'case', 'switch', 'end', 'procedure', 'function','for', 'begin']
   # Lista de símbolos especiais
   simbolos_especiais = [',', ';', '.', '=', '(', ')', '{', '}']

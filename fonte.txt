@@ -1,22 +1,22 @@
-// fonte de teste do léxico //
+// fonte de teste do lexico //
 
 @@ teste de palavra reservada
 begin end
-@@ teste de símbolos
+@@ teste de simbolos
 ; := <> ** +++
 
 /:
-  teste de comentário 
-  de várias linhas
+  teste de comentario 
+  de varias linhas
 :/
-@@ teste identificadores válidos
-n!1 i nota t_prox
+@@ teste identificadores validos
+n.1 i nota t_prox
 
-@@ teste de dígitos
+@@ teste de digitos
 2 345 23,5 5,55 -4,5
 @@ teste dos erros
-  /: teste de comentario invalido - apague a barra final ou dois pontos. :/
-  v_0 @@ apague o 0 para teste de um identificador inválido
-  3,0 @@ apague o 0 para teste de um dígito inválido
-  !  @@ teste de caractere inválido
+  /:teste de comentario invalido - apague a barra final ou dois pontos. :/
+  v_0 @@ apague o 0 para teste de um identificador invalido
+  3,0 @@ apague o 0 para teste de um digito invalido
+  !  @@ teste de caractere invalido
   paraantesdelerisso
