@@ -6,4 +6,4 @@ if __name__ == '__main__':
     while not l.fim_arquivo:
         token = l.gerar_token()
         if not token['tipo'] == 'comentario':
-            print(token)
+            print(f'{token["tipo"]}: {token["valor"]}')
