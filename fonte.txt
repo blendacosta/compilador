@@ -1,16 +1,14 @@
 // fonte de teste do lexico //
-
 @@ teste de palavra reservada
-begin end
+begin end char program
 @@ teste de simbolos
 ; := <> ** +++
-
 /:
   teste de comentario 
   de varias linhas
 :/
 @@ teste identificadores validos
-n.1 i nota t_prox
+n!1 i nota t_prox
 
 @@ teste de digitos
 2 345 23,5 5,55 -4,5

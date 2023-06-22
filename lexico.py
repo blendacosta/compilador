@@ -28,7 +28,7 @@ class Lexico:
         
     Avança a posição atual no arquivo até encontrar um caractere que não seja em branco ou nova linha.
     """
-    while self.posicao_atual < self.tamanho_arquivo:
+    while not self.fim_arquivo and self.posicao_atual < self.tamanho_arquivo:
       if self.em_branco(self.caractere_atual):
         if self.posicao_atual+1 < len(self.arquivo):
           self.posicao_atual += 1
@@ -291,7 +291,7 @@ class Lexico:
     
     :return: Um dicionário contendo o tipo e o valor do token gerado.
     """
-    self.ignorar_em_branco() # ignora os espaços em branco até achar um caracter
+    self.ignorar_em_branco() # ignora os espaços em branco até achar um caracter ou ser fim do arquivo
     
     if self.fim_arquivo:
       exit()
