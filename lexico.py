@@ -3,7 +3,7 @@ class Lexico:
     Classe responsável por realizar a análise léxica de um arquivo de código fonte.
   """
   # Lista de palavras reservadas
-  palavras_reservadas = ['program', 'if', 'then', 'else', 'while', 'do', 'until', 'repeat', 'int', 'double', 'char', 'case', 'switch', 'end', 'procedure', 'function','for', 'begin']
+  palavras_reservadas = ['program', 'if', 'then', 'else', 'while', 'do', 'until', 'repeat', 'integer', 'double', 'char', 'boolean' 'case', 'switch', 'end', 'procedure', 'function','for', 'begin', 'type', 'var']
   # Lista de símbolos especiais
   simbolos_especiais = [',', ';', '.', '=', '(', ')', '{', '}']
   
@@ -17,10 +17,10 @@ class Lexico:
       self.arquivo = arquivo.read()
     self.linha_atual = 1
     self.posicao_atual = 0
-    self.caractere_atual = self.arquivo[self.posicao_atual]
     self.tamanho_arquivo = len(self.arquivo)
+    self.caractere_atual = self.arquivo[self.posicao_atual] if self.tamanho_arquivo > 0 else ''
     self.lexema = ''
-    self.fim_arquivo = False
+    self.fim_arquivo = self.tamanho_arquivo == 0
   
   def ignorar_em_branco(self):
     """
@@ -294,7 +294,7 @@ class Lexico:
     self.ignorar_em_branco() # ignora os espaços em branco até achar um caracter ou ser fim do arquivo
     
     if self.fim_arquivo:
-      exit()
+      return None
     
     # identificador
     if self.letra(self.caractere_atual): # 0 >> 1

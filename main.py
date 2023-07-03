@@ -1,9 +1,8 @@
 from lexico import Lexico
+from sintatico import Sintatico
 
 if __name__ == '__main__':
-    l = Lexico('fonte.txt')
-
-    while not l.fim_arquivo:
-        token = l.gerar_token()
-        if not token['tipo'] == 'comentario':
-            print(f'{token["tipo"]}: {token["valor"]}')
+    l = Lexico('teste.txt')
+    s = Sintatico(l)
+    s.programa()
+    print('mo! compilado com sucesso ???')
