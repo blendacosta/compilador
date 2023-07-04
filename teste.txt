@@ -1,0 +1,32 @@
+program x;
+type i = integer; b = boolean;
+var a, j: double; x: i;
+
+procedure x (n: i);
+begin
+  write(n);
+end;
+
+function w (l:b; d:x) : w;
+begin
+  w := b and x > 10;
+end;
+
+begin
+  @@ teste de atribuição
+  if 
+    i > 1 
+  then 
+    write(a,0) 
+  else 
+    write(b, 1);
+
+  a := x; a := 0; a := x(2);
+  j := 0;
+  while 
+    j < 3 
+  do 
+    j := j + 1;
+    
+  p := -8,3 * 3;
+end

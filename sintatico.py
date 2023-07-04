@@ -44,9 +44,10 @@ class Sintatico:
           self.d_procedimento()
         else:
           self.d_funcao()
-        # self.obter_token() 
+        self.obter_token() 
         if self.token is None or self.token['valor'] != ';':
           self.erro(';')
+        self.obter_token()
     self.comando_composto() # comando composto
 
   # 03 <definição de tipos>: type <identificador> = <tipo> ; {<identificador> = <tipo> ;}
@@ -68,9 +69,9 @@ class Sintatico:
       if self.token is None or self.token['tipo'] != 'identificador':
         break
   
-  # 04 <tipo>: integer | real | boolean | char | <identificador>
+  # 04 <tipo>: integer | double | boolean | char | <identificador>
   def tipo(self):
-    return self.token['valor'] in ('integer', 'real', 'boolean', 'char') or self.token['tipo'] == 'identificador'
+    return self.token['valor'] in ('integer', 'double', 'boolean', 'char') or self.token['tipo'] == 'identificador'
   
   # 05 <definição de variáveis>: var <lista de identificadores> : <tipo> {; <lista de identificadores> : <tipo>};
   def d_variaveis(self):
@@ -82,7 +83,7 @@ class Sintatico:
       if self.token is None or self.token['valor'] != ':':
         self.erro(':')
       self.obter_token()
-      if not self.tipo(self.token):
+      if not self.tipo():
         self.erro('tipo')
       self.obter_token()
       if self.token is None or self.token['valor'] != ';':
@@ -108,7 +109,6 @@ class Sintatico:
     self.obter_token()
     if self.token is not None and self.token['valor'] == '(':
       self.parametros_formais()
-      self.obter_token()
     if self.token is None or self.token['valor'] != ';':
       self.erro(';')
     self.bloco()
@@ -121,7 +121,6 @@ class Sintatico:
     self.obter_token()
     if self.token is not None and self.token['valor'] == '(':
       self.parametros_formais()
-      self.obter_token()
     if self.token is None or self.token['valor'] != ':':
       self.erro(':')
     self.obter_token()
@@ -159,6 +158,7 @@ class Sintatico:
     
     if self.token is None or self.token['valor'] != ')':
       self.erro(')')
+    self.obter_token()
   
   # 11 <comando composto>: begin <comando sem rotulo>; {<comando sem rotulo>;} end
   def comando_composto(self):
@@ -216,6 +216,7 @@ class Sintatico:
     self.obter_token()
     self.comando_sem_rotulo()
     if self.token is not None and self.token['valor'] == 'else':
+      self.obter_token()
       self.comando_sem_rotulo()
   
   # 16 <comando repetitivo>: while <expressão> do <comando sem rotulo>
@@ -293,7 +294,7 @@ class Sintatico:
     self.obter_token()
     if self.token is not None and self.token['valor'] == '(':
       self.lista_expressoes()
-      self.obter_token()
       if self.token is None or self.token['valor'] != ')':
         self.erro(')')
+      self.obter_token()
         
