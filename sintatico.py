@@ -6,10 +6,11 @@ class Sintatico:
     
   def erro(self, esperado):
     if self.token is None:
-      print(f'mo! ಠ_ಠ Erro: esperado [ {esperado} ], encontrado [ fim do arquivo ] na linha {self.l.linha_atual}.')
+      print(f'mo! ಠ_ಠ Erro sintático: esperado [ {esperado} ], encontrado [ fim do arquivo ] na linha {self.l.linha_atual}.')
     else:
-      print(f'mo! ಠ_ಠ Erro: esperado [ {esperado} ], encontrado [ {self.token["valor"]} ] na linha {self.l.linha_atual}.')
+      print(f'mo! ಠ_ಠ Erro sintático: esperado [ {esperado} ], encontrado [ {self.token["valor"]} ] na linha {self.l.linha_atual}.')
     exit()
+  
   
   def obter_token(self):
     self.token = None
@@ -188,8 +189,8 @@ class Sintatico:
         self.atribuicao()
       elif self.token is not None and self.token['valor'] == '(':
         self.chamada_procedimento()
-      else:
-        self.erro('atribuicao ou chamada de procedimento')
+      # else:
+      #   self.erro('atribuicao ou chamada de procedimento')
     elif self.token['valor'] == 'if':
       self.comando_condicional()
     elif self.token['valor'] == 'while':

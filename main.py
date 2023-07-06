@@ -5,5 +5,5 @@ if __name__ == '__main__':
     l = Lexico('teste.txt')
     s = Sintatico(l)
     s.programa()
-    print('mo! (๑•̀ㅂ•́)و✧')
+    print('mo! compilado com sucesso! (๑•̀ㅂ•́)و✧')
  
