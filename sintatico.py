@@ -6,9 +6,9 @@ class Sintatico:
     
   def erro(self, esperado):
     if self.token is None:
-      print(f'Erro: esperado [ {esperado} ], encontrado [ fim do arquivo ] na linha {self.l.linha_atual}.')
+      print(f'mo! ಠ_ಠ Erro: esperado [ {esperado} ], encontrado [ fim do arquivo ] na linha {self.l.linha_atual}.')
     else:
-      print(f'Erro: esperado [ {esperado} ], encontrado [ {self.token["valor"]} ] na linha {self.l.linha_atual}.')
+      print(f'mo! ಠ_ಠ Erro: esperado [ {esperado} ], encontrado [ {self.token["valor"]} ] na linha {self.l.linha_atual}.')
     exit()
   
   def obter_token(self):

@@ -74,28 +74,28 @@ class Lexico:
     """
     Exibe uma mensagem de erro para um identificador inválido e encerra o programa.
     """
-    print(f'Erro: identificador inválido [ {self.lexema} ] na linha {self.linha_atual}.')
+    print(f'mo! ಠಿ_ಠ Erro: identificador inválido [ {self.lexema} ] na linha {self.linha_atual}.')
     exit()
   
   def erro_caractere_invalido(self):
     """
     Exibe uma mensagem de erro para um caractere inválido e encerra o programa.
     """
-    print(f'Erro: caractere inválido [ {self.caractere_atual} ] na linha {self.linha_atual}.')
+    print(f'mo! ಠಿ_ಠ Erro: caractere inválido [ {self.caractere_atual} ] na linha {self.linha_atual}.')
     exit()
     
   def erro_comentario_invalido(self):
     """
     Exibe uma mensagem de erro para um comentário inválido e encerra o programa.
     """
-    print(f'Erro: comentário inválido  [ {self.lexema} ] na linha {self.linha_atual}.')
+    print(f'mo! ಠಿ_ಠ Erro: comentário inválido  [ {self.lexema} ] na linha {self.linha_atual}.')
     exit()
     
   def erro_digito_invalido(self):
     """
     Exibe uma mensagem de erro para um dígito inválido e encerra o programa.
     """
-    print(f'Erro: dígito inválido [ {self.lexema} ] na linha {self.linha_atual}.')
+    print(f'mo! ಠಿ_ಠ Erro: dígito inválido [ {self.lexema} ] na linha {self.linha_atual}.')
     exit()
     
   def a_identificador(self):

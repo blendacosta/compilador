@@ -14,15 +14,17 @@ end;
 
 begin
   @@ teste de atribuição
+  a := +x or y and e; a := 0; a := x(2);
+  @@ teste de chamada de procedimento
+  r(-a, a <> -1 div 2);
+  @@ teste de condicional
   if 
     i > 1 
   then 
     write(a,0) 
   else 
     write(b, 1);
-
-  a := x; a := 0; a := x(2);
-  j := 0;
+  @@ teste de repetitivo
   while 
     j < 3 
   do 
